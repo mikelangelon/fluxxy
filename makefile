@@ -1,7 +1,7 @@
 NO_VENDOR := `go list bol/... | grep -v 'bol/vendor/'`
 
 build:
-	go build -ldflags "-s $(LDFLAGS)" bol/contract/cmd/pdfMaker
+	go build -ldflags "-s $(LDFLAGS)" game/cmd/fluxxy
 
 sanitize:
 	go fmt $(NO_VENDOR)

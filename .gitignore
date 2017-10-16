@@ -1,0 +1,6 @@
+# MAC files
+.DS_Store
+
+# IDEA
+.idea/
+/output
