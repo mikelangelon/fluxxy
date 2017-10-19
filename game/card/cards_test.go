@@ -1,4 +1,4 @@
-package mainmodel
+package card
 
 import (
 	"testing"

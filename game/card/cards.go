@@ -1,11 +1,30 @@
-package mainmodel
+package card
 
 import (
 	"math/rand"
 	"time"
 )
 
-func initCards() []*Card {
+type Cards []*Card
+type Card struct {
+	ID string `json:"id" bson:"id"`
+	Type string
+	Description string  `json:"description" bson:"description"`
+	RuleType string
+	AdditionalInfo string
+	AdditionalCards []string
+}
+
+func (c Cards) FindCard(cardId string) (*Card, int){
+	for i, card := range c {
+		if card.ID == cardId {
+			return card, i
+		}
+	}
+	return nil, 0
+}
+
+func InitCards() []*Card {
 	cards := []*Card{}
 	cards = append(cards,
 		keeper("The Party"),

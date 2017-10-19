@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net/http"
 	"rest"
+	"game"
 )
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
@@ -11,6 +12,8 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	game.Games = make(map[int64]*game.Game)
+
 	v1 := rest.V1Handler()
 	http.Handle("/v1/", v1)
 
